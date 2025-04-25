@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agents</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 0.5rem 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        h1, h2 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .agent-type {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .agent-type:hover {
+            background-color: #f9f9f9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.5rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f0f0f0;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        form button {
+            background-color: #333;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #555;
+        }
+
+        #chartContainer {
+            width: 100%;
+            height: 300px;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0.5rem;
+            }
+            nav a {
+              display: block;
+              width: 100%;
+              padding: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>AI Agents</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#types">Types of AI Agents</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <section id="home">
+            <h2>Welcome to AI Agents World</h2>
+            <p>AI agents are intelligent entities that perceive their environment and take actions to maximize their chances of success. They can be used in various applications, from simple task automation to complex decision-making processes.</p>
+            <p>This website provides information about AI agents, their types, and how you can get in touch with us.</p>
+        </section>
+
+        <section id="types">
+            <h2>Types of AI Agents</h2>
+
+            <div class="agent-type">
+                <h3>Simple Reflex Agents</h3>
+                <p>Simple reflex agents react directly to percepts. They have no memory of past states and their actions are based solely on the current percept.</p>
+            </div>
+
+            <div class="agent-type">
+                <h3>Model-Based Reflex Agents</h3>
+                <p>Model-based reflex agents maintain an internal state that depends on the percept history and thereby reflect at least some of the unobserved aspects of the current state.</p>
+            </div>
+
+            <div class="agent-type">
+                <h3>Goal-Based Agents</h3>
+                <p>Goal-based agents use goal information, which describes situations that are desirable, to make decisions. They combine goal information with a model of the world.</p>
+            </div>
+
+            <div class="agent-type">
+                <h3>Utility-Based Agents</h3>
+                <p>Utility-based agents try to maximize their own "happiness". A utility function maps a state to a real number, which describes the associated degree of happiness.</p>
+            </div>
+
+            <h2>Performance Chart</h2>
+            <div id="chartContainer"></div>
+
+            <h2>Agent Comparison Table</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Agent Type</th>
+                        <th>Perception</th>
+                        <th>Decision Making</th>
+                        <th>Learning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Simple Reflex</td>
+                        <td>Current Percept</td>
+                        <td>Direct Reaction</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Model-Based Reflex</td>
+                        <td>Current Percept, History</td>
+                        <td>Model-Based Reaction</td>
+                        <td>Limited</td>
+                    </tr>
+                    <tr>
+                        <td>Goal-Based</td>
+                        <td>Current Percept, Goals</td>
+                        <td>Goal-Oriented Planning</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Utility-Based</td>
+                        <td>Current Percept, Utility</td>
+                        <td>Utility Maximization</td>
+                        <td>Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+            <div id="formMessage"></div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 AI Agents. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Chart Data
+            const chartData = [
+                { label: 'Simple Reflex', value: 20 },
+                { label: 'Model-Based Reflex', value: 40 },
+                { label: 'Goal-Based', value: 60 },
+                { label: 'Utility-Based', value: 80 }
+            ];
+
+            // Create Chart
+            function createChart(data, containerId) {
+                const container = document.getElementById(containerId);
+                const width = container.offsetWidth;
+                const height = container.offsetHeight;
+                const barWidth = width / data.length - 10;
+                const maxValue = Math.max(...data.map(item => item.value));
+
+                data.forEach((item, index) => {
+                    const barHeight = (item.value / maxValue) * height;
+                    const bar = document.createElement('div');
+                    bar.style.width = barWidth + 'px';
+                    bar.style.height = barHeight + 'px';
+                    bar.style.backgroundColor = '#4CAF50';
+                    bar.style.position = 'absolute';
+                    bar.style.bottom = '0';
+                    bar.style.left = (index * (barWidth + 10)) + 'px';
+                    bar.style.textAlign = 'center';
+                    bar.style.color = 'white';
+                    bar.style.borderRadius = '5px 5px 0 0';
+
+                    const label = document.createElement('span');
+                    label.textContent = item.label;
+                    label.style.display = 'block';
+                    label.style.fontSize = '0.8em';
+                    label.style.marginTop = '5px';
+                    bar.appendChild(label);
+
+                    container.appendChild(bar);
+                });
+            }
+
+            createChart(chartData, 'chartContainer');
+
+            // Form Submission
+            const contactForm = document.getElementById('contactForm');
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+
+                // Simulate form submission
+                setTimeout(function() {
+                    document.getElementById('formMessage').textContent = 'Thank you for your message, ' + name + '! We will get back to you soon.';
+                    contactForm.reset();
+                }, 500);
+            });
+        });
+    </script>
+
+</body>
+</html>
